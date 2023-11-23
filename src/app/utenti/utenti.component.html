@@ -1,0 +1,32 @@
+<h2>Utenti </h2>
+<ul class="banche">
+  <li><button (click)="getUtentiByBancaId()">Mostra Utenti</button></li>
+  <li><button (click)="getUtentiBloccatiByBancaId()">Mostra Utenti Bloccati</button></li>
+  <li><button (click)="cancellaLista()">Pulisci</button></li>
+</ul>
+
+  <b></b>
+ 
+    
+   
+ 
+        
+ ------- Id: -------------------------   Nome Utente:  ----------------     Password:  -----------------    Bloccato:
+  <li *ngFor="let utente of utenti">
+    <!-- <a routerLink="/detail/{{banca.id}}"> -->
+    <input type="text" [(ngModel)] = "utente.id" readonly>
+    <input type="text" [(ngModel)] = "utente.nomeUtente">  
+    <input type="text" [(ngModel)] = "utente.password">  
+    <input type="checkbox"  [checked]  = "utente.bloccato" [(ngModel)] = "utente.bloccato" >
+    <button (click)="aggiornaUtenti(utente)">Salva Modifiche</button>
+
+    
+  </li>
+  
+
+  
+   
+    <!-- <button (click)="getUtentiByBancaId()">MostraUtenti</button>
+    <button (click)="getUtentiBloccatiByBancaId()">MostraUtentiBLoccati</button> -->
+  
+

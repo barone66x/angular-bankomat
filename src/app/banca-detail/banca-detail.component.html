@@ -1,0 +1,46 @@
+<div *ngIf="banca">
+  <h2>{{ banca.nome | uppercase }} Details</h2>
+  <div><span>id: </span>{{ banca.id }}</div>
+
+  <div>
+    <label for="country-name">Banca name: </label>
+    <input
+      id="country-name"
+      [(ngModel)]="banca.nome"
+      placeholder="Banca name"
+    />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <label for="country-borders"> Banca Funzioni: </label>
+    <ul>
+      <li *ngFor="let funz of funzionalita">
+        {{ funz.nome }}
+      </li>
+    </ul>
+   
+    <br /><br />
+
+    <nav>
+        <a routerLink='/detail/{{this.banca.id}}/utenti'>Utenti</a> <br>
+        
+      </nav>
+    
+
+    <!-- <a *ngFor="let cca3 of country.borders" routerLink="/detail/{{cca3}}">
+      {{cca3}}
+      </a>
+      <ul class="countries">
+        <li *ngFor="let cca3 of country.borders">
+          <a routerLink="/detail/{{cca3}}">
+             {{cca3}}
+          </a>
+        </li>
+      </ul> -->
+    <br />
+    <br />
+    <button type="button" (click)="goBack()">go back</button>
+  </div>
+</div>

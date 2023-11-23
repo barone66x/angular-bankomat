@@ -1,0 +1,8 @@
+<h2>My Banche</h2>
+<ul class="banche">
+  <li *ngFor="let banca of banche">
+    <a routerLink="/detail/{{banca.id}}">
+      <span class="badge">{{banca.id}}</span> {{banca.nome}}
+    </a>
+  </li>
+</ul>
