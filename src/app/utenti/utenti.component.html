@@ -5,13 +5,19 @@
   <li><button (click)="cancellaLista()">Pulisci</button></li>
 </ul>
 
-  <b></b>
+<br><br>
+<div>
+  Nome Utente:  ---------------    Password:  -----------------  <br>
+  <input type="text" [(ngModel)]="nomeUtenteToAdd">
+  <input type="text" [(ngModel)]="passwordToAdd">
+  <button (click)="addUtente()">Aggiungi utente</button>
+</div>
+
  
-    
-   
+   <br><br>
  
-        
- ------- Id: -------------------------   Nome Utente:  ----------------     Password:  -----------------    Bloccato:
+<div>
+  ------- Id: -------------------------   Nome Utente:  ----------------     Password:  -----------------    Bloccato:
   <li *ngFor="let utente of utenti">
     <!-- <a routerLink="/detail/{{banca.id}}"> -->
     <input type="text" [(ngModel)] = "utente.id" readonly>
@@ -22,6 +28,8 @@
 
     
   </li>
+</div>
+ 
   
 
   

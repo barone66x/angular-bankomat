@@ -31,7 +31,7 @@ export class UtenteService {
     return this.http.post<Utente>(this.utenteUrl , utente);
   }
 
-  aggiornaUtente(utente: Utente) : Observable<Utente>{
+  aggiornaUtente(utente: Utente ) : Observable<Utente>{
     return this.http.put<Utente>(`${this.utenteUrl}/${utente.id}`, utente);
   }
 }

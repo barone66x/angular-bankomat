@@ -18,6 +18,10 @@ export class UtentiComponent {
   utentiBanca$: Observable<Utente[]> = new Observable<Utente[]>();
   utenti: Utente[] = [];
   utenteToUpdate: Utente | undefined;
+ 
+  nomeUtenteToAdd : string = "";
+  passwordToAdd : string = "";
+
 
   constructor(
     private utenteService: UtenteService,
@@ -63,8 +67,16 @@ export class UtentiComponent {
       .subscribe((sa) => (this.utenteToUpdate = sa));
   }
 
-  // addUtente(){
-  //   this.utenteService.addUtente(this.utenteTest).subscribe(ss => this.utenteTest == ss);
-  //   console.log("metodo add lanciato");
-  // }
+  addUtente(){
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    let utenteToAdd : Utente = {
+      nomeUtente: this.nomeUtenteToAdd,
+      password: this.passwordToAdd,
+      idBanca: id,
+      bloccato: false,
+      id: 0
+    };
+    this.utenteService.addUtente(utenteToAdd).subscribe(ss => utenteToAdd == ss);
+    console.log("metodo add lanciato");
+  }
 }
